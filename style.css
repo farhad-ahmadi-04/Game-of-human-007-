@@ -1,0 +1,46 @@
+body {
+    margin: 0 auto;
+}
+
+section {
+    margin: 0 auto;
+    width: 1366px;
+    height: 655px;
+
+    background-color: rgb(73, 77, 79);
+    background-repeat: no-repeat;
+    background-image: url(img/2cf3eff413a99a414f215d12a38a15ff.gif);
+    background-size: 1370px 656px;
+   
+    
+}
+
+#container {
+    margin: 0 auto;
+    height: 627px;
+    width: 1300px;
+    display: flex;
+    position: relative;
+    top: 30px;
+    background: url(img/pngtree-green-grass-design-png-psd-png-image_6116409.png);
+    background-repeat: no-repeat;
+    background-size: 1300px 600px;
+    opacity: 0.95;
+}
+
+#container #hummy {
+    position: absolute;
+    margin: 20px;
+}
+
+#hummy>img {
+    width: 100px;
+
+}
+
+#bomb>img {
+    width: 150px;
+    position: absolute;
+    top: 40%;
+    left: 45%;
+}
