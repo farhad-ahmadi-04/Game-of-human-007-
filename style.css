@@ -35,15 +35,16 @@ section {
 
 #hummy>img {
     width: 100px;
-
 }
 
-#bomb>img {
+#bomb>.bombImg {
     width: 150px;
     position: absolute;
-    top: 40%;
-    left: 45%;
+    top: 0;
+    left: 0;
+    display: none;
 }
+
 #informaition{
     margin: 0 auto;
  
@@ -59,4 +60,18 @@ section {
      padding: 15px;
      border-radius: 10px;
      margin-left: 250px;
+ }
+
+ #gameOver{
+    background-color: rgb(50, 45, 45);
+    padding: 40px;
+    /* border: 1 solid rgb(54, 20, 20); */
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    position: absolute;
+    left: 40%;
+    top: 40%;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(183, 46, 46);
  }
