@@ -4,13 +4,13 @@ body {
 
 section {
     margin: 0 auto;
-    width: 1366px;
+    width: 1300px;
     height: 655px;
 
-    background-color: rgb(73, 77, 79);
-    background-repeat: no-repeat;
-    background-image: url(img/2cf3eff413a99a414f215d12a38a15ff.gif);
-    background-size: 1370px 656px;
+    background: linear-gradient( to right, rgb(15, 100, 45) 60%,rgb(6, 248, 91)) ;
+    /* background-repeat: no-repeat; */
+    /* background-image: url(img/2cf3eff413a99a414f215d12a38a15ff.gif); */
+    /* background-size: 1370px 656px; */
    
     
 }
@@ -46,11 +46,20 @@ section {
 }
 
 #informaition{
-    margin: 0 auto;
- 
+    position: absolute;
+    top: 50px;
+   left: 93%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: right;
+    justify-items: right;
  }
  #gameSpeed{
      opacity: 1;
+     appearance: slider-vertical;
+     height: 200px;
+     margin-top: 20px;
  }
  #informaition>span{
      font-size: 30px;
@@ -59,13 +68,11 @@ section {
      background-color: rgb(226, 69, 69);
      padding: 15px;
      border-radius: 10px;
-     margin-left: 250px;
  }
 
  #gameOver{
     background-color: rgb(50, 45, 45);
     padding: 40px;
-    /* border: 1 solid rgb(54, 20, 20); */
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     position: absolute;

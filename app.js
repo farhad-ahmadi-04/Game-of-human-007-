@@ -5,7 +5,7 @@ let hummy = document.querySelector("#hummy")
 let bomb = document.querySelector("#bomb")
 // let img1 = document.querySelector(".img1")
 // let img2 = document.querySelector(".img2")
-let bombImg=document.querySelector('.bombImg')
+let bombImg = document.querySelector('.bombImg')
 
 let input = document.querySelector('#gameSpeed')
 let heart = document.querySelector('#heart')
@@ -15,8 +15,14 @@ let step = 50;
 let windowWidth = window.innerWidth;
 let windowHeight = window.innerHeight;
 
+
+
+
+
+
 body.addEventListener("keydown", function (e) {
     if (e.keyCode == 37 || e.keyCode == 65) {
+        console.log(e);
         // برای حرکت به سمت چپ
         // move left
         if (x > 0) {
@@ -73,30 +79,30 @@ body.addEventListener('keydown', () => {
 
 // جون کارکتر در بازی 
 // damage
-hummy.addEventListener('click', ()=>{
+hummy.addEventListener('click', () => {
     if (heart.innerHTML > 0) {
         heart.innerHTML -= 1
-
-    } 
+        
+    }
     if (heart.innerHTML == 0) {
         hummy.innerHTML = `<img src="img/head-sad-face.png"alt="">`
-        container.innerHTML+=`<div id="gameOver">
-        <span>Game Over</span>
-    </div>`
-    document.querySelector('.gameOver').style.transitionDuration='5s'
+        container.innerHTML += `<div id="gameOver">
+        <span>Khateri Lost😢</span>
+        </div>`
+        let gameOver= document.querySelector('#gameOver');
+       gameOver.style.transitionDuration = '5s'
     }
 
 })
 
 
 // اگر روی صفحه بازی کلیک کنید انفجاری رخ میده
-container.addEventListener('click',(e)=>{
-//    مشخص کردن مختصات
-    let width=e.x
-    let height=e.y
-
-    bombImg.style.top=height-80+'px'
-    bombImg.style.left=width-80+'px'
-    bombImg.style.display="block"
-    
+container.addEventListener('click', (e) => {
+    //    مشخص کردن مختصات
+    let width = e.x
+    let height = e.y
+console.log(width,height);
+    bombImg.style.top = height -80 + 'px'
+    bombImg.style.left = width - 80 + 'px'
+    bombImg.style.display = "block"
 })
