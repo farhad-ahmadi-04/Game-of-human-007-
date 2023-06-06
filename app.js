@@ -91,6 +91,7 @@ hummy.addEventListener('click', () => {
         </div>`
         let gameOver= document.querySelector('#gameOver');
        gameOver.style.transitionDuration = '5s'
+       
     }
 
 })
