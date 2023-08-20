@@ -11,7 +11,7 @@ let input = document.querySelector('#gameSpeed')
 let heart = document.querySelector('#heart')
 let x = 0;
 let y = 0;
-let step = 50;
+let step = 70;
 let windowWidth = window.innerWidth;
 let windowHeight = window.innerHeight;
 
@@ -65,11 +65,11 @@ body.addEventListener("keydown", function (e) {
 body.addEventListener('keydown', () => {
 
     if (input.value == 1) {
-        hummy.style.transitionDuration = '10s'
+        hummy.style.transitionDuration = '8s'
     } else if (input.value == 2) {
-        hummy.style.transitionDuration = '7s'
+        hummy.style.transitionDuration = '6s'
     } else if (input.value == 3) {
-        hummy.style.transitionDuration = '4s'
+        hummy.style.transitionDuration = '3s'
     } else if (input.value == 4) {
         hummy.style.transitionDuration = '2s'
     } else if (input.value == 5) {
@@ -85,9 +85,9 @@ hummy.addEventListener('click', () => {
         
     }
     if (heart.innerHTML == 0) {
-        hummy.innerHTML = `<img src="img/head-sad-face.png"alt="">`
+        // hummy.innerHTML = `<img src="img/head-sad-face.png"alt="">`
         container.innerHTML += `<div id="gameOver">
-        <span>Khateri Lost😢</span>
+        <span>GAME OVER</span>
         </div>`
         let gameOver= document.querySelector('#gameOver');
        gameOver.style.transitionDuration = '5s'
