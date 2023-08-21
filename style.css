@@ -11,8 +11,6 @@ section {
     /* background-repeat: no-repeat; */
     /* background-image: url(img/2cf3eff413a99a414f215d12a38a15ff.gif); */
     /* background-size: 1370px 656px; */
-
-
 }
 
 .container {
@@ -29,22 +27,18 @@ section {
     opacity: 0.95;
 }
 
-#container #hummy {
+.container .hummy {
     position: absolute;
     margin: 20px;
-}
-
-#hummy>img {
     width: 100px;
+    height: 100px;
 }
 
-/* #bomb>.bombImg {
-    width: 150px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none;
-} */
+.hummy>img {
+    width: 100%;
+}
+
+
 
 #informaition {
     width: 50px;

@@ -1,8 +1,8 @@
 let body = document.querySelector("body")
 let section = document.querySelector("section")
 let container = document.querySelector(".container")
-let hummy = document.querySelector("#hummy")
-let bomb = document.querySelector("#bomb")
+let hummy = document.querySelector(".hummy")
+let hummyImage= document.querySelector('.hummyImage')
 // let img1 = document.querySelector(".img1")
 // let img2 = document.querySelector(".img2")
 let bombImg = document.querySelector('.bombImg')
@@ -22,11 +22,11 @@ let windowHeight = window.innerHeight;
 
 body.addEventListener("keydown", function (e) {
     if (e.keyCode == 37 || e.keyCode == 65) {
-        console.log(e);
         // برای حرکت به سمت چپ
         // move left
         if (x > 0) {
-            console.log(x);
+            console.log(e.keyCode);
+
             x -= step;
             hummy.style.left = x + 'px';
             hummy.style.transform = 'rotate(90deg)';
@@ -35,7 +35,6 @@ body.addEventListener("keydown", function (e) {
         //  برای حرکت بع سمت بالا
         // move up
         if (y > 0) {
-            console.log(y);
             y -= step
             hummy.style.top = y + 'px'
             hummy.style.transform = 'rotate(0deg)';
@@ -43,7 +42,7 @@ body.addEventListener("keydown", function (e) {
     } else if (e.keyCode == 39 || e.keyCode == 68) {
         // برای حرکت به سمت راست
         if (x + 100 < container.clientWidth - 100) {
-            console.log(x);
+
             x += step
             hummy.style.left = x + 'px'
             hummy.style.transform = 'rotate(0deg)'
@@ -52,7 +51,7 @@ body.addEventListener("keydown", function (e) {
         // برای حرکت به سمت پایین
         // move down
         if (y + 100 < container.clientHeight - 100) {
-            console.log(y);
+
             y += step
             hummy.style.top = y + 'px'
             hummy.style.transform = 'rotate(90deg)'
@@ -82,16 +81,16 @@ body.addEventListener('keydown', () => {
 hummy.addEventListener('click', () => {
     if (heart.innerHTML > 0) {
         heart.innerHTML -= 1
-        
+
     }
     if (heart.innerHTML == 0) {
         // hummy.innerHTML = `<img src="img/head-sad-face.png"alt="">`
         container.innerHTML += `<div id="gameOver">
         <span>GAME OVER</span>
         </div>`
-        let gameOver= document.querySelector('#gameOver');
-       gameOver.style.transitionDuration = '5s'
-       
+        let gameOver = document.querySelector('#gameOver');
+        gameOver.style.transitionDuration = '5s'
+
     }
 
 })
@@ -99,10 +98,14 @@ hummy.addEventListener('click', () => {
 
 // اگر روی صفحه بازی کلیک کنید انفجاری رخ میده
 container.addEventListener('click', (e) => {
-    //    مشخص کردن مختصات
-    let width = e.x
-    let height = e.y
-    bombImg.style.top = height -80 + 'px'
-    bombImg.style.left = width - 80 + 'px'
-    bombImg.style.display = "block"
+    if (e.target.classList.contains('hummyImage')) {
+        console.log('oh');
+        heart.value-=1
+    }
+    // //    مشخص کردن مختصات
+    // let width = e.x
+    // let height = e.y
+    // bombImg.style.top = height -80 + 'px'
+    // bombImg.style.left = width - 80 + 'px'
+    // bombImg.style.display = "block"
 })
