@@ -1,6 +1,6 @@
 let body = document.querySelector("body")
 let section = document.querySelector("section")
-let container = document.querySelector("#container")
+let container = document.querySelector(".container")
 let hummy = document.querySelector("#hummy")
 let bomb = document.querySelector("#bomb")
 // let img1 = document.querySelector(".img1")
@@ -102,7 +102,6 @@ container.addEventListener('click', (e) => {
     //    مشخص کردن مختصات
     let width = e.x
     let height = e.y
-console.log(width,height);
     bombImg.style.top = height -80 + 'px'
     bombImg.style.left = width - 80 + 'px'
     bombImg.style.display = "block"
