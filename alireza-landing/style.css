@@ -35,8 +35,8 @@ body{
 .chooseSide{
     margin-right: 160px;
     background: white;
-    width: 160px;
-    height: 80px ;
+    width: fit-content;
+    height: fit-content ;
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -44,25 +44,33 @@ body{
     letter-spacing: 2px;
     cursor: pointer;
 }
+
 .signIn{
     margin-right: 5px;
     background: white;
-    width: 160px;
-    height: 80px ;
+    width: fit-content;
+    height: fit-content ;
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     letter-spacing: 2px;
     cursor: pointer;
+
 }
+
 .signIn:hover , .chooseSide:hover{
     background: rgba(255, 255, 255, 0.483);
     transform: translateY(-10px) ;
     transition-duration:1s;
+
 }
+
 .welcomeboard{
     color: rgb(255, 255, 255);
     letter-spacing: 2px;
     font-weight: 100;
+}
+.chooseItem a{
+    padding:20px;
 }
