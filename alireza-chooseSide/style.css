@@ -20,15 +20,22 @@ body{
     width: 68%;
     height: 68vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
 
 }
-#container hr{
+
+#sides {
+    display: flex;
+    flex-direction: row;
+}
+
+/* #container hr{
     height: 100%;
     color:  rgba(255, 255, 255, 0.25);
-}
+} */
+
 .inputBox{
     position: relative;
     width: 250px;
