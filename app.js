@@ -109,8 +109,8 @@ function timer() {
     let min, sec
     
     // start the timer
-    min = 1
-    sec = 0
+    min = 2
+    sec = 59
 
     timerEl.textContent = `${min}:${sec}`
     const timerInterval = setInterval(() => {

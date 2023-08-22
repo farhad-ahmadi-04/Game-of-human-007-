@@ -48,8 +48,7 @@ function saveUserData(nameP1V, numberP1V, nameP2V, numberP2V) {
   localStorage.setItem("players", JSON.stringify(playersLS));
   // add location for btn
   location.href = "../index.html"
-  // call timer for game play
-  timer()
+ 
 
 }
 
