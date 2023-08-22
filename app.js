@@ -102,10 +102,50 @@ container.addEventListener('click', (e) => {
         console.log('oh');
         heart.value-=1
     }
-    // //    مشخص کردن مختصات
-    // let width = e.x
-    // let height = e.y
-    // bombImg.style.top = height -80 + 'px'
-    // bombImg.style.left = width - 80 + 'px'
-    // bombImg.style.display = "block"
 })
+// timer of the game
+const timerEl=document.querySelector('#timerEl')
+function timer() {
+    let min, sec
+    
+    // start the timer
+    min = 1
+    sec = 0
+
+    timerEl.textContent = `${min}:${sec}`
+    const timerInterval = setInterval(() => {
+
+        sec -= 1
+
+        if (sec == 0 && min == 0) {
+            endGame()
+            clearInterval(timerInterval)
+        }
+        else {
+            if (sec < 0) {
+                sec = 59
+                min -= 1
+            }
+            if (sec < 10) {
+                sec = `0${sec}`
+            }
+
+        }
+
+        timerEl.textContent = `${min}:${sec}`
+
+        // currentMin = min
+        // currentSec = sec
+
+
+
+    }, 1000)
+
+}
+timer()
+// end game
+const report=document.querySelector('#report')
+function endGame() {
+    report.style.display = 'flex'
+    timerEl.textContent="00:00"
+}
