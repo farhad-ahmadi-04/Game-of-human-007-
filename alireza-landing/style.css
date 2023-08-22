@@ -12,10 +12,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(45deg , rgb(42, 4, 84) , #260379);
+    background: #192835;
 }
 #container{
-    background: rgba(255, 255, 255, 0.456);
+    background: #1d2d3a;
     width: 70%;
     height: 70vh;
     display: flex;
@@ -34,7 +34,7 @@ body{
 }
 .chooseSide{
     margin-right: 160px;
-    background: white;
+    background: #192835;
     width: fit-content;
     height: fit-content ;
     border-radius: 8px;
@@ -47,7 +47,7 @@ body{
 
 .signIn{
     margin-right: 5px;
-    background: white;
+    background: #192835;
     width: fit-content;
     height: fit-content ;
     border-radius: 8px;
@@ -60,7 +60,7 @@ body{
 }
 
 .signIn:hover , .chooseSide:hover{
-    background: rgba(255, 255, 255, 0.483);
+    background: #1d2d3a;
     transform: translateY(-10px) ;
     transition-duration:1s;
 

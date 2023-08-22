@@ -11,7 +11,7 @@ section {
     width: 1365px;
     height: 657px;
 
-    background: linear-gradient(to right, rgb(4, 13, 67) 60%, rgb(9, 25, 129));
+    background:#192835 ;
     /* background-repeat: no-repeat; */
     /* background-image: url(img/2cf3eff413a99a414f215d12a38a15ff.gif); */
     /* background-size: 1370px 656px; */
@@ -24,7 +24,7 @@ section {
     display: flex;
     position: relative;
     top: 30px;
-    background: url(img/background3.jpg);
+    background: url(img/images.png);
     border-radius: 10px 10px 10px 10px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -60,7 +60,7 @@ section {
     align-items: center;
     justify-content: right;
     justify-items: right;
-    background: rgba(0, 8, 79, 0.466);
+    background:#192835;
     padding: 10px;
     border-radius: 8px;
 }
@@ -78,14 +78,14 @@ section {
     font-size: 30px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: rgb(134, 217, 225);
-    background-color: rgba(0, 37, 72, 0.918);
+    background-color:#192835;
     padding: 8px 15px;
     border-radius: 10px;
     margin-top: 10px;
 }
 
 #gameOver {
-    background-color: rgb(7, 5, 46);
+    background-color:#192835;
     padding: 40px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;

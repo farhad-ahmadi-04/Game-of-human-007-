@@ -12,10 +12,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(45deg , rgb(42, 4, 84) , #260379);
+    background:#192835;
 }
 #container{
-    background: linear-gradient(45deg , rgb(42, 4, 84) , #260379);
+    background: #192835;
     border: 1px solid rgba(255, 255, 255, 0.25);
     width: 68%;
     height: 68vh;
@@ -45,7 +45,7 @@ body{
     width: 100%;
     padding: 10px;
     border: 1px solid rgba(255, 255, 255, 0.25);
-    background: linear-gradient(45deg , rgb(42, 4, 84) , #260379);
+    background:#192835;
     border-radius: 5px;
     outline: none;
     color: #fff;
@@ -69,7 +69,7 @@ body{
     transform: translateX(10px) translateY(-7px);
     font-size: 0.65em;
     padding: 0 10px;
-    background:  linear-gradient(45deg , rgb(42, 4, 84) , #260379);
+    background: #192835;
     border-left: 1px solid #00dfc4 ;
     border-right: 1px solid #00dfc4 ;
     letter-spacing: 0.2em;
