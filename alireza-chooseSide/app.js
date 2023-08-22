@@ -46,6 +46,10 @@ function saveUserData(nameP1V, numberP1V, nameP2V, numberP2V) {
 //   then put the array back in local storage
   localStorage.setItem("games", JSON.stringify(gamesLS));
   localStorage.setItem("players", JSON.stringify(playersLS));
+  // add location for btn
+  location.href = "../index.html"
+  // call timer for game play
+  timer()
 
 }
 
