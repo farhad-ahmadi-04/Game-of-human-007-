@@ -2,7 +2,7 @@ let body = document.querySelector("body")
 let section = document.querySelector("section")
 let container = document.querySelector(".container")
 let hummy = document.querySelector(".hummy")
-let hummyImage= document.querySelector('.hummyImage')
+let hummyImage = document.querySelector('.hummyImage')
 // let img1 = document.querySelector(".img1")
 // let img2 = document.querySelector(".img2")
 let bombImg = document.querySelector('.bombImg')
@@ -78,36 +78,33 @@ body.addEventListener('keydown', () => {
 
 // جون کارکتر در بازی 
 // damage
-hummy.addEventListener('click', () => {
+hummy.addEventListener('click', demage)
+
+function demage() {
     if (heart.innerHTML > 0) {
         heart.innerHTML -= 1
-
     }
     if (heart.innerHTML == 0) {
-        // hummy.innerHTML = `<img src="img/head-sad-face.png"alt="">`
-        container.innerHTML += `<div id="gameOver">
-        <span>GAME OVER</span>
-        </div>`
-        let gameOver = document.querySelector('#gameOver');
-        gameOver.style.transitionDuration = '5s'
-
+        endGame()
+        
     }
 
-})
+}
 
 
 // اگر روی صفحه بازی کلیک کنید انفجاری رخ میده
 container.addEventListener('click', (e) => {
     if (e.target.classList.contains('hummyImage')) {
         console.log('oh');
-        heart.value-=1
+        heart.value -= 1
     }
 })
 // timer of the game
-const timerEl=document.querySelector('#timerEl')
+const timerEl = document.querySelector('#timerEl')
+
 function timer() {
     let min, sec
-    
+
     // start the timer
     min = 2
     sec = 59
@@ -120,8 +117,7 @@ function timer() {
         if (sec == 0 && min == 0) {
             endGame()
             clearInterval(timerInterval)
-        }
-        else {
+        } else {
             if (sec < 0) {
                 sec = 59
                 min -= 1
@@ -133,19 +129,14 @@ function timer() {
         }
 
         timerEl.textContent = `${min}:${sec}`
-
-        // currentMin = min
-        // currentSec = sec
-
-
-
     }, 1000)
 
 }
 timer()
 // end game
-const report=document.querySelector('#report')
+const report = document.querySelector('#report')
+// end game function 
 function endGame() {
     report.style.display = 'flex'
-    timerEl.textContent="00:00"
+    timerEl.textContent = "00:00"
 }
