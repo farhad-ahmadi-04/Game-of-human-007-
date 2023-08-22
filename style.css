@@ -75,6 +75,12 @@ section {
 .bombImg{
     position: absolute;
     display: none;
+    width: 100px;
+    height: 100px;
+}
+.bombImg img{
+    width: 100%;
+    height: 100%;
 }
 
 /* map style end(((((((((((((((((((((((())))))))))))))))))))))))))) */

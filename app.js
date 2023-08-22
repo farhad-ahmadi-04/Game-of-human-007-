@@ -26,7 +26,6 @@ body.addEventListener("keydown", function (e) {
         // برای حرکت به سمت چپ
         // move left
         if (x > 0) {
-            console.log(e.keyCode);
 
             x -= step;
             hummy.style.left = x + 'px';
@@ -79,17 +78,17 @@ body.addEventListener('keydown', () => {
 
 // جون کارکتر در بازی 
 // demage
-hummy.addEventListener('click', demage)
-// function for demage
-function demage() {
-    if (heart.innerHTML > 0) {
-        heart.innerHTML -= 1
-    }
-    if (heart.innerHTML == 0) {
-        // call end game function
-        endGame()
-    }
-}
+// hummy.addEventListener('click', demage)
+// // function for demage
+// function demage() {
+//     if (heart.innerHTML > 0) {
+//         heart.innerHTML -= 1
+//     }
+//     if (heart.innerHTML == 0) {
+//         // call end game function
+//         endGame()
+//     }
+// }
 
 
 // timer of the game
@@ -137,18 +136,26 @@ function endGame() {
 // if click on the page
 container.addEventListener('click', (e) => {
     // if (e.target.classList.contains('hummyImage')) {
-    //     heart.value -= 1
-    // }
-     //    مشخص کردن مختصات
-     let width = e.x
-     let height = e.y
- console.log(width,height);
+        //     heart.value -= 1
+        // }
+        //    مشخص کردن مختصات
+        let width = e.x
+        let height = e.y
+        
+
      bombImg.style.top = height -180 + 'px'
      bombImg.style.left = width - 180 + 'px'
      bombImg.style.display = "block"
     
     const bomb=setTimeout(() => {
-        console.log("ok");
         bombImg.style.display = "none"
     },1000)
+ damage(width,height)
 })
+// function damage(x,y) {
+//    console.log(x,y);
+//     if (x==hummy.pageX) {
+//         console.log(hummy.pageX);
+//     }
+// }
+
