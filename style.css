@@ -2,29 +2,31 @@
 
 body {
     margin: 0 auto;
-    font-family: poppins , sans-serif;
-    
+    font-family: poppins, sans-serif;
+
 }
+
 span {
-    font-size: 30px;
+    font-size: 1.5rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: rgb(134, 217, 225);
-    background-color:#192835;
+    background-color: #192835;
     padding: 8px 15px;
     border-radius: 10px;
     margin-top: 10px;
 }
 
 section {
+    padding: 10px;
+    height: 100vh;
     margin: 0 auto;
-    width: 1365px;
-    height: 657px;
-    background:#192835 ;
+    background: #192835;
 }
+
 /* container start----- */
 .container {
-    margin: 0 auto;
-    height: 610px;
+    margin: 50px auto;
+    height: 90%;
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -36,35 +38,45 @@ section {
     background-size: cover;
     opacity: 0.95;
 }
+
 /* header start.......... */
-#header{
+#header {
     width: 100%;
     height: 10%;
     display: flex;
     justify-content: space-around;
 }
+
 /* timer */
-#timerEl{
+#timerEl {
     font-size: 20px;
     color: #ffffffa6;
 
 }
+
 /* header end......... */
 /* map start */
-#map{
+#map {
     position: relative;
     width: 100%;
     height: 90%;
 }
+
 .container .hummy {
     position: absolute;
     margin: 20px;
     width: 100px;
     height: 100px;
 }
+
 .hummy>img {
     width: 100%;
 }
+.bombImg{
+    position: absolute;
+    display: none;
+}
+
 /* map style end(((((((((((((((((((((((())))))))))))))))))))))))))) */
 /* game speed start---------------- */
 #informaition {
@@ -77,7 +89,7 @@ section {
     align-items: center;
     justify-content: right;
     justify-items: right;
-    background:#192835;
+    background: #192835;
     padding: 10px;
     border-radius: 8px;
 }
@@ -89,6 +101,7 @@ section {
     margin: 50px 0 10px 0;
 
 }
+
 /* game speed end---------------- */
 /* report part start--------------- */
 #report {
@@ -99,7 +112,9 @@ section {
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     position: absolute;
-    padding: 30px;
+    padding: 10px;
+    width: 30%;
+    height: 30%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -109,10 +124,12 @@ section {
     align-items: center;
     justify-content: center;
 }
-#report
-h3{
-color: rgb(255, 255, 255);
+
+#report h3 {
+    font-size: 1.3rem;
+    color: rgb(255, 255, 255);
 }
+
 /* report part end=============== */
 /* batman btn style---------------- */
 button {
@@ -128,42 +145,42 @@ button {
     cursor: pointer;
     background-color: transparent;
     transform: translateY(8px)
-   }
-   
-   button:after {
+}
+
+button:after {
     content: '';
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    box-shadow: 0px 0 0 0 white;
+    box-shadow: 0px 0 0 0 rgb(4, 4, 4);
     transition: all 2s ease;
-   }
-   
-   button:hover:after {
-    box-shadow: 0px -13px 56px 12px #ffffffa6;
-   }
-   
-   button a {
+}
+
+button:hover:after {
+    box-shadow: 0px -13px 56px 12px #111010a6;
+}
+
+button a {
     position: absolute;
     width: 100%;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 100;
     left: 50%;
     top: 39%;
     letter-spacing: 3px;
     text-align: center;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     color: black;
     transition: all 2s ease;
     text-decoration: none;
-   }
-   
-   button:hover a {
+}
+
+button:hover a {
     color: white;
-   }
-   
-   button:before {
+}
+
+button:before {
     content: '';
     position: absolute;
     width: 0;
@@ -173,9 +190,10 @@ button {
     top: 50%;
     transform: translate(-50%, -50%);
     transition: all 1s ease;
-   }
-   
-   button:hover:before {
+}
+
+button:hover:before {
     width: 100%;
-   }
+}
+
 /* batman btn style end */

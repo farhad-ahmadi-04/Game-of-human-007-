@@ -12,17 +12,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-<<<<<<< Updated upstream
-    background:#192835;
-}
-#container{
-    background: #192835;
-=======
     background: #1d2d3a;
 }
 #container{
     background: #1d2d3a;
->>>>>>> Stashed changes
     border: 1px solid rgba(255, 255, 255, 0.25);
     width: 68%;
     height: 68vh;
@@ -47,16 +40,13 @@ body{
     position: relative;
     width: 250px;
     margin-bottom: 50px;
+  
 }
 .inputBox input{
     width: 100%;
     padding: 10px;
     border: 1px solid rgba(255, 255, 255, 0.25);
-<<<<<<< Updated upstream
-    background:#192835;
-=======
     background: #1d2d3a;
->>>>>>> Stashed changes
     border-radius: 5px;
     outline: none;
     color: #fff;
@@ -80,11 +70,7 @@ body{
     transform: translateX(10px) translateY(-7px);
     font-size: 0.65em;
     padding: 0 10px;
-<<<<<<< Updated upstream
-    background: #192835;
-=======
     background: #1d2d3a;
->>>>>>> Stashed changes
     border-left: 1px solid #00dfc4 ;
     border-right: 1px solid #00dfc4 ;
     letter-spacing: 0.2em;
@@ -98,6 +84,9 @@ body{
 .inputBox input:valid,
 .inputBox input:focus{
     border: 1px solid #00dfc4  ;
+}
+.player1{
+    margin-right: 20px;
 }
 .player1 h3{
   margin-bottom: 20px;
@@ -158,12 +147,12 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    box-shadow: 0px 0 0 0 white;
+    box-shadow: 0px 0 0 0 rgb(12, 12, 12);
     transition: all 2s ease;
    }
    
    button:hover:after {
-    box-shadow: 0px -13px 56px 12px #ffffffa6;
+    box-shadow: 0px -13px 56px 12px #000000a6;
    }
    
    button a {
@@ -176,7 +165,7 @@ button {
     letter-spacing: 3px;
     text-align: center;
     transform: translate(-50%,-50%);
-    color: #1d2d3a;
+    color: #b3c7d7;
     transition: all 2s ease;
    }
    
@@ -189,7 +178,7 @@ button {
     position: absolute;
     width: 0;
     height: 100%;
-    background-color: #1d2d3a;
+    background-color: #000000;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);

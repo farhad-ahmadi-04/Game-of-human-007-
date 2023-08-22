@@ -92,13 +92,6 @@ function demage() {
 }
 
 
-// اگر روی صفحه بازی کلیک کنید انفجاری رخ میده
-// if click on the page
-container.addEventListener('click', (e) => {
-    if (e.target.classList.contains('hummyImage')) {
-        heart.value -= 1
-    }
-})
 // timer of the game
 const timerEl = document.querySelector('#timerEl')
 // function of timer
@@ -138,3 +131,24 @@ const report = document.querySelector('#report')
 function endGame() {
     report.style.display = 'flex'
 }
+// bomb part-----------------
+
+// اگر روی صفحه بازی کلیک کنید انفجاری رخ میده
+// if click on the page
+container.addEventListener('click', (e) => {
+    // if (e.target.classList.contains('hummyImage')) {
+    //     heart.value -= 1
+    // }
+     //    مشخص کردن مختصات
+     let width = e.x
+     let height = e.y
+ console.log(width,height);
+     bombImg.style.top = height -180 + 'px'
+     bombImg.style.left = width - 180 + 'px'
+     bombImg.style.display = "block"
+    
+    const bomb=setTimeout(() => {
+        console.log("ok");
+        bombImg.style.display = "none"
+    },1000)
+})
