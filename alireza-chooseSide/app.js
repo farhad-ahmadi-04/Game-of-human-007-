@@ -15,7 +15,6 @@ button.addEventListener("click", (e) => {
 
   // push them in the array
   addInLS(nameP1V, numberP1V, nameP2V, numberP2V);
-
 });
 
 function fromLS() {
@@ -39,17 +38,39 @@ function fromLS() {
 
 function addInLS(nameP1V, numberP1V, nameP2V, numberP2V) {
   // take that array out of local storage or build one if there is not any
-  gamesPlayersLS = fromLS();
-  gamesLS = gamesPlayersLS[0];
-  playersLS = gamesPlayersLS[1];
+  let gamesPlayersLS = fromLS();
+  let gamesLS = gamesPlayersLS[0];
+  let playersLS = gamesPlayersLS[1];
 
   // push them in the array
+
   gamesLS.push({ player1: nameP1V, player2: nameP2V });
 
-  playersLS.push(
-    { name: nameP1V, number: numberP1V, win: 0, lose: 0 },
-    { name: nameP2V, number: numberP2V, win: 0, lose: 0 }
-  );
+  // we need to build them for the first time
+  // then we have sth to loop over
+  if (playersLS.length === 0) {
+    playersLS.push({ name: nameP1V, number: numberP1V, win: 0, lose: 0 });
+    if (numberP1V !== numberP2V) {
+      playersLS.push({ name: nameP2V, number: numberP2V, win: 0, lose: 0 }); 
+    }
+  }
+  // only push the new user
+  let isInArray = false;
+  playersLS.forEach((player) => {
+    if (numberP1V === player.number) {
+      isInArray = true;
+    }
+    if (numberP2V === player.number) {
+      isInArray = true;
+    }
+  });
+
+  // if isInArray = false then push them in the array
+  if (!isInArray) {
+    playersLS.push({ name: nameP1V, number: numberP1V, win: 0, lose: 0 });
+
+    playersLS.push({ name: nameP2V, number: numberP2V, win: 0, lose: 0 });
+  }
 
   toLS(gamesLS, playersLS);
 }
@@ -63,3 +84,5 @@ function toLS(gamesLS, playersLS) {
 }
 
 // ................................................................
+
+

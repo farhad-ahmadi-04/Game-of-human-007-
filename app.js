@@ -200,6 +200,10 @@ function loserP1() {
 
   winner.innerHTML = player2;
   loser.innerHTML = player1;
+
+//   add a point to player1 lose 
+//   add a point to player2 win 
+//   loseWinFromLS();
 }
 
 // player2 loser > time = 0
@@ -214,4 +218,26 @@ function loserP2() {
 
   winner.innerHTML = player1;
   loser.innerHTML = player2;
+}
+
+
+// let win = 0;
+// let lose = 0;
+
+// win++;
+// lose++;
+
+// add a point to win or lose
+function loseWinFromLS() {
+    const gamesPlayersLS = fromLS();
+    const playersLS = gamesPlayersLS[1];
+
+    // get player1 & player2 names from the array
+    let win = playersLS[0].win;
+    let lose = playersLS[0].lose;
+
+    //   add a point to player1 lose 
+//   add a point to player2 win 
+
+
 }
