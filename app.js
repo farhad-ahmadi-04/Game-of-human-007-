@@ -170,9 +170,28 @@ container.addEventListener('click', (e) => {
 
 // get user names from local storage
 
-function getNames() {
-    fromLS()
+function addNames() {
+    // get the games array
+    gamesPlayersLS = fromLS();
+    gamesLS = gamesPlayersLS[0];
+
+    // get player1 & player2 names from the array
+    let player1 = gamesLS[0].player1;
+    let player2 = gamesLS[0].player2;
+
+// add them in the html
+
+const firstPlayer = document.querySelector('#player1');
+const secondPlayer = document.querySelector('#player2');
+
+firstPlayer.innerHTML = player1;
+secondPlayer.innerHTML = player2;
 
 }
+
+addNames();
+
+
+
 
 
