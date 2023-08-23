@@ -97,7 +97,7 @@ button.addEventListener("click", (e) => {
   e.preventDefault()
   if(input1Value == "" ){
      input1.parentElement.style = "border : 1px solid red" 
-     console.log(input1);
+     
   }else{
     input1.parentElement.style = "border : 1px solid #00dfc4" 
   };
@@ -122,13 +122,15 @@ button.addEventListener("click", (e) => {
 if(input4Value == "" ){
   input4.parentElement.style = "border : 1px solid red" 
   
+  
 }else{
  input4.parentElement.style = "border : 1px solid #00dfc4" 
 };
 if (input1Value && input2Value && input3Value && input4Value != ""){
   location.href = "../index.html";
-}
-
+};
+if(input1Value && input2Value && input3Value && input4Value == "")
+    alert("please fill the field")
 
 })
 

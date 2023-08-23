@@ -188,5 +188,7 @@ button {
    button:hover:before {
     width: 100%;
    }
-   
+   input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
    
