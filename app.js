@@ -7,7 +7,7 @@ let hummyImage = document.querySelector(".hummyImage");
 // let img2 = document.querySelector(".img2")
 let bombImg = document.querySelector(".bombImg");
 
-let input = document.querySelector("#gameSpeed");
+let input = document.getElementById("gameSpeed");
 let heart = document.querySelector("#heart");
 let x = 0;
 let y = 0;
@@ -117,11 +117,32 @@ function timer() {
 timer();
 // end game
 const report = document.querySelector("#report");
+const homeBtn=document.querySelector('.homeBtn')
 // end game function
-function endGame() {
+function endGame(e) {
   report.style.display = "flex";
 }
-// bomb part-----------------
+
+// ---------------click io report page-------------- 
+// for back to home
+homeBtn.addEventListener("click", homePage);
+// function for back to home
+function homePage(event) {
+  if (event.target.classList.contains("homeBtn")) {
+    location.href= "alireza-landing/index.html";
+  }
+}
+
+const playAgainBtn=document.querySelector('.playAgainBtn')
+// for back to home
+playAgainBtn.addEventListener("click", playAgainTheGame);
+// function for back to home
+function playAgainTheGame(event) {
+  if (event.target.classList.contains("playAgainBtn")) {
+    location.href= "alireza-chooseSide/choosSide.html";
+  }
+}
+// ---------------bomb part-----------------
 
 // اگر روی صفحه بازی کلیک کنید انفجاری رخ میده
 // if click on the page
@@ -132,7 +153,10 @@ container.addEventListener("click", (e) => {
   //    مشخص کردن مختصات
   let width = e.x;
   let height = e.y;
-
+  bombImg.getBoundingClientRect();
+ const x = bombImg.x;
+ const y = bombImg.y;
+ console.log(x,y);
   bombImg.style.top = height - 180 + "px";
   bombImg.style.left = width - 180 + "px";
   bombImg.style.display = "block";
@@ -142,12 +166,15 @@ container.addEventListener("click", (e) => {
   }, 1000);
   damage(width, height);
 });
-// function damage(x,y) {
-//    console.log(x,y);
-//     if (x==hummy.pageX) {
-//         console.log(hummy.pageX);
-//     }
-// }
+function damage(x,y) {
+    setTimeout(() => {
+      if (x==hummy.clientHeight && y==hummy.clientWidth) {
+        console.log(x);
+        heart.innerHTML-=1
+    }
+    },1000)
+   
+}
 
 // Sara........................................................
 
