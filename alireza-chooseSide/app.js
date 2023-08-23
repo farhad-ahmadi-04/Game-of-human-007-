@@ -80,9 +80,55 @@ function toLS(gamesLS, playersLS) {
   localStorage.setItem("games", JSON.stringify(gamesLS));
   localStorage.setItem("players", JSON.stringify(playersLS));
   // add location for btn
-  location.href = "../index.html";
+  // location.href = "../index.html";
 }
 
 // ................................................................
+let form = document.querySelector("#form")
+let input1 = document.querySelector(".input1");
+let input2 = document.querySelector(".input2");
+let input3 = document.querySelector(".input3");
+let input4 = document.querySelector(".input4");
+button.addEventListener("click", (e) => {
+  let input1Value = input1.value.trim();
+  let input2Value = input2.value.trim();
+  let input3Value = input3.value.trim();
+  let input4Value = input4.value.trim();
+  e.preventDefault()
+  if(input1Value == "" ){
+     input1.parentElement.style = "border : 1px solid red" 
+     console.log(input1);
+  }else{
+    input1.parentElement.style = "border : 1px solid #00dfc4" 
+  };
 
+
+  if(input2Value == "" ){
+    input2.parentElement.style = "border : 1px solid red" 
+    
+ }else{
+   input2.parentElement.style = "border : 1px solid #00dfc4" 
+ };
+
+
+ if(input3Value == "" ){
+  input3.parentElement.style = "border : 1px solid red" 
+  
+}else{
+ input3.parentElement.style = "border : 1px solid #00dfc4" 
+};
+
+
+if(input4Value == "" ){
+  input4.parentElement.style = "border : 1px solid red" 
+  
+}else{
+ input4.parentElement.style = "border : 1px solid #00dfc4" 
+};
+if (input1Value && input2Value && input3Value && input4Value != ""){
+  location.href = "../index.html";
+}
+
+
+})
 
