@@ -25,14 +25,14 @@ section {
 
 /* container start----- */
 .container {
-    margin: 50px auto;
+    margin: 10px auto;
     height: 90%;
     width: 90%;
     display: flex;
     flex-direction: column;
     position: relative;
     top: 30px;
-    background: url(img/images.png);
+    background: url(../img/background.jpg);
     border-radius: 10px 10px 10px 10px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -58,21 +58,23 @@ section {
 /* map start */
 #map {
     position: relative;
-    width: 100%;
+    width: 90%;
     height: 90%;
 }
 
 .container .hummy {
     position: absolute;
-    margin: 20px;
-    width: 100px;
-    height: 100px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
 }
 
-.hummy>img {
+.hummy>svg {
     width: 100%;
+    height: 100%;
 }
-.bombImg{
+/* (((((((((((((:fail part:))))))))))))) */
+/* .bombImg{
     position: absolute;
     display: none;
     width: 100px;
@@ -81,15 +83,15 @@ section {
 .bombImg img{
     width: 100%;
     height: 100%;
-}
+} */
 
 /* map style end(((((((((((((((((((((((())))))))))))))))))))))))))) */
 /* game speed start---------------- */
 #informaition {
     width: 50px;
     position: absolute;
-    top: 100px;
-    left: 96%;
+    top: 20%;
+    left: 93%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,7 +107,6 @@ section {
     height: 200px;
     width: 50px;
     margin: 50px 0 10px 0;
-
 }
 
 /* game speed end---------------- */
@@ -119,8 +120,7 @@ section {
     border: 1px solid rgba(255, 255, 255, 0.18);
     position: absolute;
     padding: 10px;
-    width: 30%;
-    height: 30%;
+    padding: 17px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -135,7 +135,12 @@ section {
     font-size: 1.3rem;
     color: rgb(255, 255, 255);
 }
-
+.Btn{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
 /* report part end=============== */
 /* batman btn style---------------- */
 button {
@@ -203,3 +208,28 @@ button:hover:before {
 }
 
 /* batman btn style end */
+
+/* ---------responsive style start------- */
+@media only screen and (max-width: 950px) {
+    body{
+        font-size: 5px;
+    }
+    /* game speed style */
+    #informaition{
+        width: 10%;
+        height: 5%;
+    }
+    /* end */
+    /* report style start----- */
+    #report h3{
+        font-size: small;
+    }
+
+    #report a{
+        font-size: small;
+    }
+    #report .Btn{
+        width: 90%;
+    }
+    /* end------00000------ */
+  }

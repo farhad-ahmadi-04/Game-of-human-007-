@@ -17,7 +17,7 @@ body{
 #container{
     background: #1d2d3a;
     border: 1px solid rgba(255, 255, 255, 0.25);
-    width: 68%;
+    width: 82%;
     height: 68vh;
     display: flex;
     justify-content: center;
@@ -38,7 +38,7 @@ body{
 
 .inputBox{
     position: relative;
-    width: 250px;
+    width: 99%;
     margin-bottom: 50px;
   
 }
@@ -141,7 +141,8 @@ button {
     transform: translateY(8px)
    }
    
-   button:after {
+
+button:after {
     content: '';
     position: absolute;
     left: 0;
@@ -151,11 +152,13 @@ button {
     transition: all 2s ease;
    }
    
-   button:hover:after {
+
+button:hover:after {
     box-shadow: 0px -13px 56px 12px #000000a6;
    }
    
-   button a {
+
+button a {
     position: absolute;
     width: 100%;
     font-size: 15px;
@@ -167,13 +170,14 @@ button {
     transform: translate(-50%,-50%);
     color: #b3c7d7;
     transition: all 2s ease;
-   }
+}
    
-   button:hover a {
+
+button:hover a {
     color: white;
-   }
+}
    
-   button:before {
+button:before {
     content: '';
     position: absolute;
     width: 0;
@@ -183,12 +187,24 @@ button {
     top: 50%;
     transform: translate(-50%, -50%);
     transition: all 1s ease;
-   }
+}
    
-   button:hover:before {
+button:hover:before {
     width: 100%;
    }
-   input::-webkit-inner-spin-button {
+input::-webkit-inner-spin-button {
     -webkit-appearance: none;
   }
-   
+
+
+@media only screen and (max-width: 900px) {
+    #container {
+      
+      width: 90%;
+      height: 90vh;
+
+    }
+    #form {
+        font-size: 15px;
+    }
+  }
