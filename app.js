@@ -8,7 +8,7 @@ let hummyImage = document.querySelector(".hummyImage");
 let bombImg = document.querySelector(".bombImg");
 
 
-  // **********************************************
+// **********************************************
 // اطلاعات با هر رفرش میپره نمیشه توی متغیر ریخت یاحالا هنوز نمیدونم چطوری
 // varibles for players names ...........................
 // const firstPlayer = document.querySelector("#player1");
@@ -135,29 +135,29 @@ function timer() {
 timer();
 // end game
 const report = document.querySelector("#report");
-const homeBtn=document.querySelector('.homeBtn')
+const homeBtn = document.querySelector('.homeBtn')
 // end game function
 function endGame(e) {
   report.style.display = "flex";
 }
 
-// ---------------click io report page-------------- 
+// ---------------click to report page-------------- 
 // for back to home
 homeBtn.addEventListener("click", homePage);
 // function for back to home
 function homePage(event) {
   if (event.target.classList.contains("homeBtn")) {
-    location.href= "alireza-landing/index.html";
+    location.href = "alireza-landing/index.html";
   }
 }
 
-const playAgainBtn=document.querySelector('.playAgainBtn')
+const playAgainBtn = document.querySelector('.playAgainBtn')
 // for back to home
 playAgainBtn.addEventListener("click", playAgainTheGame);
 // function for back to home
 function playAgainTheGame(event) {
   if (event.target.classList.contains("playAgainBtn")) {
-    location.href= "alireza-chooseSide/choosSide.html";
+    location.href = "alireza-chooseSide/choosSide.html";
   }
 }
 // ---------------bomb part-----------------
@@ -170,11 +170,7 @@ container.addEventListener("click", (e) => {
   // }
   //    مشخص کردن مختصات
   let width = e.x;
-  let height = e.y;
-  bombImg.getBoundingClientRect();
- const x = bombImg.x;
- const y = bombImg.y;
- console.log(x,y);
+  let height = e.y; 
   bombImg.style.top = height - 180 + "px";
   bombImg.style.left = width - 180 + "px";
   bombImg.style.display = "block";
@@ -184,14 +180,15 @@ container.addEventListener("click", (e) => {
   }, 1000);
   damage(width, height);
 });
-function damage(x,y) {
-    setTimeout(() => {
-      if (x==hummy.clientHeight && y==hummy.clientWidth) {
-        console.log(x);
-        heart.innerHTML-=1
+
+function damage(x, y) {
+  setTimeout(() => {
+    if (x == hummy.clientHeight && y == hummy.clientWidth) {
+      console.log(x);
+      heart.innerHTML -= 1
     }
-    },1000)
-   
+  }, 1000)
+
 }
 
 // Sara........................................................
@@ -215,8 +212,8 @@ function getNames() {
   const currentPlayer1 = gamesLS[gamesLS.length - 1].player1;
   const currentPlayer2 = gamesLS[gamesLS.length - 1].player2;
 
-console.log(currentPlayer1);
-console.log(currentPlayer2);
+  console.log(currentPlayer1);
+  console.log(currentPlayer2);
 
   return [currentPlayer1, currentPlayer2];
 }
@@ -252,9 +249,9 @@ function loserP1() {
   winner.innerHTML = player2;
   loser.innerHTML = player1;
 
-//   add a point to player1 lose 
-//   add a point to player2 win 
-//   loseWinFromLS();
+  //   add a point to player1 lose 
+  //   add a point to player2 win 
+  //   loseWinFromLS();
 }
 
 // player2 loser > time = 0
@@ -281,15 +278,15 @@ function loserP2() {
 
 // add a point to win or lose
 function loseWinFromLS() {
-    const gamesPlayersLS = fromLS();
-    const playersLS = gamesPlayersLS[1];
+  const gamesPlayersLS = fromLS();
+  const playersLS = gamesPlayersLS[1];
 
-    // get player1 & player2 names from the array
-    let win = playersLS[0].win;
-    let lose = playersLS[0].lose;
+  // get player1 & player2 names from the array
+  let win = playersLS[0].win;
+  let lose = playersLS[0].lose;
 
-    //   add a point to player1 lose 
-//   add a point to player2 win 
+  //   add a point to player1 lose 
+  //   add a point to player2 win 
 
 
 }
