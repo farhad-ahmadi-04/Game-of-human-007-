@@ -1,0 +1,205 @@
+/* @import url('https://fonts.googleapis.com/css2?family=poppins:wght@500&display=swap'); */
+
+body {
+    margin: 0 auto;
+    font-family: poppins, sans-serif;
+
+}
+
+span {
+    font-size: 1.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(134, 217, 225);
+    background-color: #192835;
+    padding: 8px 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+section {
+    padding: 10px;
+    height: 100vh;
+    margin: 0 auto;
+    background: #192835;
+}
+
+/* container start----- */
+.container {
+    margin: 50px auto;
+    height: 90%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 30px;
+    background: url(img/images.png);
+    border-radius: 10px 10px 10px 10px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.95;
+}
+
+/* header start.......... */
+#header {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* timer */
+#timerEl {
+    font-size: 20px;
+    color: #ffffffa6;
+
+}
+
+/* header end......... */
+/* map start */
+#map {
+    position: relative;
+    width: 100%;
+    height: 90%;
+}
+
+.container .hummy {
+    position: absolute;
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+.hummy>img {
+    width: 100%;
+}
+.bombImg{
+    position: absolute;
+    display: none;
+    width: 100px;
+    height: 100px;
+}
+.bombImg img{
+    width: 100%;
+    height: 100%;
+}
+
+/* map style end(((((((((((((((((((((((())))))))))))))))))))))))))) */
+/* game speed start---------------- */
+#informaition {
+    width: 50px;
+    position: absolute;
+    top: 100px;
+    left: 96%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: right;
+    justify-items: right;
+    background: #192835;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#gameSpeed {
+    appearance: slider-vertical;
+    height: 200px;
+    width: 50px;
+    margin: 50px 0 10px 0;
+
+}
+
+/* game speed end---------------- */
+/* report part start--------------- */
+#report {
+    background: rgba(10, 40, 75, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: absolute;
+    padding: 10px;
+    width: 30%;
+    height: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* when user finnish the game display will be flex */
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#report h3 {
+    font-size: 1.3rem;
+    color: rgb(255, 255, 255);
+}
+
+/* report part end=============== */
+/* batman btn style---------------- */
+button {
+    border: none;
+    position: relative;
+    width: 200px;
+    height: 73px;
+    padding: 0;
+    z-index: 2;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='868' width='2500' viewBox='0 0 726 252.17'%3E%3Cpath d='M483.92 0S481.38 24.71 466 40.11c-11.74 11.74-24.09 12.66-40.26 15.07-9.42 1.41-29.7 3.77-34.81-.79-2.37-2.11-3-21-3.22-27.62-.21-6.92-1.36-16.52-2.82-18-.75 3.06-2.49 11.53-3.09 13.61S378.49 34.3 378 36a85.13 85.13 0 0 0-30.09 0c-.46-1.67-3.17-11.48-3.77-13.56s-2.34-10.55-3.09-13.61c-1.45 1.45-2.61 11.05-2.82 18-.21 6.67-.84 25.51-3.22 27.62-5.11 4.56-25.38 2.2-34.8.79-16.16-2.47-28.51-3.39-40.21-15.13C244.57 24.71 242 0 242 0H0s69.52 22.74 97.52 68.59c16.56 27.11 14.14 58.49 9.92 74.73C170 140 221.46 140 273 158.57c69.23 24.93 83.2 76.19 90 93.6 6.77-17.41 20.75-68.67 90-93.6 51.54-18.56 103-18.59 165.56-15.25-4.21-16.24-6.63-47.62 9.93-74.73C656.43 22.74 726 0 726 0z'/%3E%3C/svg%3E") no-repeat 50% 50%;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='868' width='2500' viewBox='0 0 726 252.17'%3E%3Cpath d='M483.92 0S481.38 24.71 466 40.11c-11.74 11.74-24.09 12.66-40.26 15.07-9.42 1.41-29.7 3.77-34.81-.79-2.37-2.11-3-21-3.22-27.62-.21-6.92-1.36-16.52-2.82-18-.75 3.06-2.49 11.53-3.09 13.61S378.49 34.3 378 36a85.13 85.13 0 0 0-30.09 0c-.46-1.67-3.17-11.48-3.77-13.56s-2.34-10.55-3.09-13.61c-1.45 1.45-2.61 11.05-2.82 18-.21 6.67-.84 25.51-3.22 27.62-5.11 4.56-25.38 2.2-34.8.79-16.16-2.47-28.51-3.39-40.21-15.13C244.57 24.71 242 0 242 0H0s69.52 22.74 97.52 68.59c16.56 27.11 14.14 58.49 9.92 74.73C170 140 221.46 140 273 158.57c69.23 24.93 83.2 76.19 90 93.6 6.77-17.41 20.75-68.67 90-93.6 51.54-18.56 103-18.59 165.56-15.25-4.21-16.24-6.63-47.62 9.93-74.73C656.43 22.74 726 0 726 0z'/%3E%3C/svg%3E") no-repeat 50% 50%;
+    -webkit-mask-size: 100%;
+    cursor: pointer;
+    background-color: transparent;
+    transform: translateY(8px)
+}
+
+button:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0px 0 0 0 rgb(4, 4, 4);
+    transition: all 2s ease;
+}
+
+button:hover:after {
+    box-shadow: 0px -13px 56px 12px #111010a6;
+}
+
+button a {
+    position: absolute;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 100;
+    left: 50%;
+    top: 39%;
+    letter-spacing: 3px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    color: black;
+    transition: all 2s ease;
+    text-decoration: none;
+}
+
+button:hover a {
+    color: white;
+}
+
+button:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: black;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1s ease;
+}
+
+button:hover:before {
+    width: 100%;
+}
+
+/* batman btn style end */

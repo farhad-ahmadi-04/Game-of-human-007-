@@ -1,143 +1,42 @@
-/* @import url('https://fonts.googleapis.com/css2?family=poppins:wght@500&display=swap'); */
-
-body {
-    margin: 0 auto;
-    font-family: poppins, sans-serif;
-
+@import url('https://fonts.googleapis.com/css2?family=poppins:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: poppins , sans-serif;
 }
-
-span {
-    font-size: 1.5rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: rgb(134, 217, 225);
-    background-color: #192835;
-    padding: 8px 15px;
-    border-radius: 10px;
-    margin-top: 10px;
-}
-
-section {
-    padding: 10px;
+body{
+    width: 100%;
     height: 100vh;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: #192835;
 }
-
-/* container start----- */
-.container {
-    margin: 50px auto;
-    height: 90%;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    top: 30px;
-    background: url(img/images.png);
-    border-radius: 10px 10px 10px 10px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.95;
-}
-
-/* header start.......... */
-#header {
-    width: 100%;
-    height: 10%;
+#container{
+    background: #1d2d3a;
+    width: 70%;
+    height: 70vh;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
 }
-
-/* timer */
-#timerEl {
-    font-size: 20px;
-    color: #ffffffa6;
-
+.chooseItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
 }
-
-/* header end......... */
-/* map start */
-#map {
-    position: relative;
-    width: 100%;
-    height: 90%;
-}
-
-.container .hummy {
-    position: absolute;
-    margin: 20px;
+.information {
     width: 100px;
     height: 100px;
+    
 }
-
-.hummy>img {
-    width: 100%;
-}
-.bombImg{
-    position: absolute;
-    display: none;
-    width: 100px;
-    height: 100px;
-}
-.bombImg img{
+.information img{
     width: 100%;
     height: 100%;
 }
-
-/* map style end(((((((((((((((((((((((())))))))))))))))))))))))))) */
-/* game speed start---------------- */
-#informaition {
-    width: 50px;
-    position: absolute;
-    top: 100px;
-    left: 96%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: right;
-    justify-items: right;
-    background: #192835;
-    padding: 10px;
-    border-radius: 8px;
-}
-
-#gameSpeed {
-    appearance: slider-vertical;
-    height: 200px;
-    width: 50px;
-    margin: 50px 0 10px 0;
-
-}
-
-/* game speed end---------------- */
-/* report part start--------------- */
-#report {
-    background: rgba(10, 40, 75, 0.25);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    position: absolute;
-    padding: 10px;
-    width: 30%;
-    height: 30%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* when user finnish the game display will be flex */
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#report h3 {
-    font-size: 1.3rem;
-    color: rgb(255, 255, 255);
-}
-
-/* report part end=============== */
-/* batman btn style---------------- */
 button {
     border: none;
     position: relative;
@@ -151,23 +50,23 @@ button {
     cursor: pointer;
     background-color: transparent;
     transform: translateY(8px)
-}
-
-button:after {
+   }
+   
+   button:after {
     content: '';
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    box-shadow: 0px 0 0 0 rgb(4, 4, 4);
+    box-shadow: 0px 0 0 0 rgb(12, 12, 12);
     transition: all 2s ease;
-}
-
-button:hover:after {
-    box-shadow: 0px -13px 56px 12px #111010a6;
-}
-
-button a {
+   }
+   
+   button:hover:after {
+    box-shadow: 0px -13px 56px 12px #000000a6;
+   }
+   
+   button a {
     position: absolute;
     width: 100%;
     font-size: 20px;
@@ -176,30 +75,27 @@ button a {
     top: 39%;
     letter-spacing: 3px;
     text-align: center;
-    transform: translate(-50%, -50%);
-    color: black;
+    transform: translate(-50%,-50%);
+    color: #b3c7d7;
     transition: all 2s ease;
-    text-decoration: none;
-}
-
-button:hover a {
+   }
+   
+   button:hover a {
     color: white;
-}
-
-button:before {
+   }
+   
+   button:before {
     content: '';
     position: absolute;
     width: 0;
     height: 100%;
-    background-color: black;
+    background-color: #000000;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     transition: all 1s ease;
-}
-
-button:hover:before {
+   }
+   
+   button:hover:before {
     width: 100%;
-}
-
-/* batman btn style end */
+   }
