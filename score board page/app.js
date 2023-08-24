@@ -8,7 +8,6 @@
 
 // ٧.هر کاربری ک وارد میشه باید چک شه ک قبلا توی ارایه پلیر ذخیره شده یا نه ک تغییرات به خودش اضافه شه و دوباره ثبت نشه.
 
-
 // template for player & history section
 
 function addToPlayers() {
@@ -25,13 +24,21 @@ function addToPlayers() {
     const nameP = player.name;
     const win = player.win;
     const lose = player.lose;
-    // the final score 
+    // the final score
     let score = player.win - player.lose;
-    if (score < 0 ) {
+    if (score < 0) {
       score = 0;
     }
+// only show the players with win or lose
+    if (!(win === 0 & lose === 0) ) {
+      document
+      .querySelector("#playersSec")
+      .insertAdjacentHTML(
+        "beforeend",
+        playerTemplate(nameP, win, lose, score)
+      );
+    }
 
-    playerTemplate(nameP, win, lose, score);
   });
 
   gamesLS.forEach((game) => {
@@ -40,7 +47,13 @@ function addToPlayers() {
     const nameP2 = game.player2;
     const date = "date";
 
-    historyTemplate(nameP1, nameP2, date);
+    document
+    .querySelector("#historySec")
+    .insertAdjacentHTML(
+      "beforeend",
+      historyTemplate(nameP1, nameP2, date)
+    );
+
   });
 }
 
@@ -63,10 +76,4 @@ function historyTemplate(nameP1, nameP2, date) {
  </div>`;
 }
 
-
-
-document.querySelector("#playersSec").insertAdjacentHTML(
-  "afterbegin", addToPlayers());
-
-
-  
+addToPlayers()
