@@ -50,8 +50,9 @@ function addInLS(nameP1V, numberP1V, nameP2V, numberP2V) {
   // then we have sth to loop over
   if (playersLS.length === 0) {
     playersLS.push({ name: nameP1V, number: numberP1V, win: 0, lose: 0 });
+    // player 1 & 2 numbers shouldnt be equal for the first time
     if (numberP1V !== numberP2V) {
-      playersLS.push({ name: nameP2V, number: numberP2V, win: 0, lose: 0 }); 
+      playersLS.push({ name: nameP2V, number: numberP2V, win: 0, lose: 0 });
     }
   }
   // only push the new user
@@ -61,6 +62,10 @@ function addInLS(nameP1V, numberP1V, nameP2V, numberP2V) {
       isInArray = true;
     }
     if (numberP2V === player.number) {
+      isInArray = true;
+    }
+    // player 1 & 2 numbers shouldnt be equal
+    if (numberP1V === numberP2V) {
       isInArray = true;
     }
   });
@@ -84,7 +89,7 @@ function toLS(gamesLS, playersLS) {
 }
 
 // ................................................................
-let form = document.querySelector("#form")
+let form = document.querySelector("#form");
 let input1 = document.querySelector(".input1");
 let input2 = document.querySelector(".input2");
 let input3 = document.querySelector(".input3");
@@ -94,43 +99,33 @@ button.addEventListener("click", (e) => {
   let input2Value = input2.value.trim();
   let input3Value = input3.value.trim();
   let input4Value = input4.value.trim();
-  e.preventDefault()
-  if(input1Value == "" ){
-     input1.parentElement.style = "border : 1px solid red" 
-     
-  }else{
-    input1.parentElement.style = "border : 1px solid #00dfc4" 
-  };
+  e.preventDefault();
+  if (input1Value == "") {
+    input1.parentElement.style = "border : 1px solid red";
+  } else {
+    input1.parentElement.style = "border : 1px solid #00dfc4";
+  }
 
+  if (input2Value == "") {
+    input2.parentElement.style = "border : 1px solid red";
+  } else {
+    input2.parentElement.style = "border : 1px solid #00dfc4";
+  }
 
-  if(input2Value == "" ){
-    input2.parentElement.style = "border : 1px solid red" 
-    
- }else{
-   input2.parentElement.style = "border : 1px solid #00dfc4" 
- };
+  if (input3Value == "") {
+    input3.parentElement.style = "border : 1px solid red";
+  } else {
+    input3.parentElement.style = "border : 1px solid #00dfc4";
+  }
 
-
- if(input3Value == "" ){
-  input3.parentElement.style = "border : 1px solid red" 
-  
-}else{
- input3.parentElement.style = "border : 1px solid #00dfc4" 
-};
-
-
-if(input4Value == "" ){
-  input4.parentElement.style = "border : 1px solid red" 
-  
-  
-}else{
- input4.parentElement.style = "border : 1px solid #00dfc4" 
-};
-if (input1Value && input2Value && input3Value && input4Value != ""){
-  location.href = "../index.html";
-};
-if(input1Value && input2Value && input3Value && input4Value == "")
-    alert("please fill the field")
-
-})
-
+  if (input4Value == "") {
+    input4.parentElement.style = "border : 1px solid red";
+  } else {
+    input4.parentElement.style = "border : 1px solid #00dfc4";
+  }
+  if (input1Value && input2Value && input3Value && input4Value != "") {
+    location.href = "../index.html";
+  }
+  if (input1Value && input2Value && input3Value && input4Value == "")
+    alert("please fill the field");
+});
