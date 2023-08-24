@@ -7,8 +7,7 @@ let hummyImage = document.querySelector(".hummyImage");
 // let img2 = document.querySelector(".img2")
 let bombImg = document.querySelector(".bombImg");
 
-
-  // **********************************************
+// **********************************************
 // اطلاعات با هر رفرش میپره نمیشه توی متغیر ریخت یاحالا هنوز نمیدونم چطوری
 // varibles for players names ...........................
 // const firstPlayer = document.querySelector("#player1");
@@ -21,8 +20,6 @@ let bombImg = document.querySelector(".bombImg");
 // firstPlayer.innerHTML = gamesGlobal[0].player1;
 // secondPlayer.innerHTML = gamesGlobal[0].player2
 // **********************************************
-
-
 
 // ......................................................
 let input = document.getElementById("gameSpeed");
@@ -95,6 +92,8 @@ function demage() {
     endGame();
     // showing loser name
     loserP1();
+    // add a point to player1 lose & player2 win
+    player2win();
   }
 }
 
@@ -118,6 +117,8 @@ function timer() {
       endGame();
       // showing loser name
       loserP2();
+      // add a point to player1 win & player2 lose
+      player1win();
       clearInterval(timerInterval);
     } else {
       if (sec < 0) {
@@ -135,29 +136,29 @@ function timer() {
 timer();
 // end game
 const report = document.querySelector("#report");
-const homeBtn=document.querySelector('.homeBtn')
+const homeBtn = document.querySelector(".homeBtn");
 // end game function
 function endGame(e) {
   report.style.display = "flex";
 }
 
-// ---------------click io report page-------------- 
+// ---------------click io report page--------------
 // for back to home
 homeBtn.addEventListener("click", homePage);
 // function for back to home
 function homePage(event) {
   if (event.target.classList.contains("homeBtn")) {
-    location.href= "alireza-landing/index.html";
+    location.href = "alireza-landing/index.html";
   }
 }
 
-const playAgainBtn=document.querySelector('.playAgainBtn')
+const playAgainBtn = document.querySelector(".playAgainBtn");
 // for back to home
 playAgainBtn.addEventListener("click", playAgainTheGame);
 // function for back to home
 function playAgainTheGame(event) {
   if (event.target.classList.contains("playAgainBtn")) {
-    location.href= "alireza-chooseSide/choosSide.html";
+    location.href = "alireza-chooseSide/choosSide.html";
   }
 }
 // ---------------bomb part-----------------
@@ -172,9 +173,9 @@ container.addEventListener("click", (e) => {
   let width = e.x;
   let height = e.y;
   bombImg.getBoundingClientRect();
- const x = bombImg.x;
- const y = bombImg.y;
- console.log(x,y);
+  const x = bombImg.x;
+  const y = bombImg.y;
+  // console.log(x, y);
   bombImg.style.top = height - 180 + "px";
   bombImg.style.left = width - 180 + "px";
   bombImg.style.display = "block";
@@ -184,14 +185,13 @@ container.addEventListener("click", (e) => {
   }, 1000);
   damage(width, height);
 });
-function damage(x,y) {
-    setTimeout(() => {
-      if (x==hummy.clientHeight && y==hummy.clientWidth) {
-        console.log(x);
-        heart.innerHTML-=1
+function damage(x, y) {
+  setTimeout(() => {
+    if (x == hummy.clientHeight && y == hummy.clientWidth) {
+      console.log(x);
+      heart.innerHTML -= 1;
     }
-    },1000)
-   
+  }, 1000);
 }
 
 // Sara........................................................
@@ -201,7 +201,6 @@ function damage(x,y) {
 // ٣.با تموم شدن جون یا تایم اسم برنده یا بازنده مشخص شه
 
 // 4.به وین یا لوز هر پلیر توی ارایه اضافه شه
-
 
 // get user names from local storage
 
@@ -214,9 +213,6 @@ function getNames() {
 
   const currentPlayer1 = gamesLS[gamesLS.length - 1].player1;
   const currentPlayer2 = gamesLS[gamesLS.length - 1].player2;
-
-console.log(currentPlayer1);
-console.log(currentPlayer2);
 
   return [currentPlayer1, currentPlayer2];
 }
@@ -252,9 +248,9 @@ function loserP1() {
   winner.innerHTML = player2;
   loser.innerHTML = player1;
 
-//   add a point to player1 lose 
-//   add a point to player2 win 
-//   loseWinFromLS();
+  //   add a point to player1 lose
+  //   add a point to player2 win
+  //   loseWinFromLS();
 }
 
 // player2 loser > time = 0
@@ -272,24 +268,71 @@ function loserP2() {
 }
 
 // ......................................................
-// ********************************************
-// let win = 0;
-// let lose = 0;
 
-// win++;
-// lose++;
+// find the current players in the players array
 
-// add a point to win or lose
-function loseWinFromLS() {
-    const gamesPlayersLS = fromLS();
-    const playersLS = gamesPlayersLS[1];
+function player1win() {
+  // get the games array
+  const gamesPlayersLS = fromLS();
+  const gamesLS = gamesPlayersLS[0];
+  // get the players array
+  const playersLS = gamesPlayersLS[1];
 
-    // get player1 & player2 names from the array
-    let win = playersLS[0].win;
-    let lose = playersLS[0].lose;
+  const currentPlayer1Num = gamesLS[gamesLS.length - 1].player1num;
+  const currentPlayer2Num = gamesLS[gamesLS.length - 1].player2num;
 
-    //   add a point to player1 lose 
-//   add a point to player2 win 
+  // find the match in both arrays
 
+  const foundP1 = playersLS.find((player1) => {
+    if (player1.number === currentPlayer1Num) {
+      return player1;
+    }
+  });
 
+  if (foundP1) {
+    foundP1.win += 1;
+  }
+
+  const foundP2 = playersLS.find((player2) => {
+    if (player2.number === currentPlayer2Num) {
+      return player2;
+    }
+  });
+
+  if (foundP2) {
+    foundP2.lose += 1;
+  }
+}
+
+function player2win() {
+  // get the games array
+  const gamesPlayersLS = fromLS();
+  const gamesLS = gamesPlayersLS[0];
+  // get the players array
+  const playersLS = gamesPlayersLS[1];
+
+  const currentPlayer1Num = gamesLS[gamesLS.length - 1].player1num;
+  const currentPlayer2Num = gamesLS[gamesLS.length - 1].player2num;
+
+  // find the match in both arrays
+
+  const foundP1 = playersLS.find((player1) => {
+    if (player1.number === currentPlayer1Num) {
+      return player1;
+    }
+  });
+
+  if (foundP1) {
+    foundP1.lose += 1;
+  }
+
+  const foundP2 = playersLS.find((player2) => {
+    if (player2.number === currentPlayer2Num) {
+      return player2;
+    }
+  });
+
+  if (foundP2) {
+    foundP2.win += 1;
+  }
 }
