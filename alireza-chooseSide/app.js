@@ -47,16 +47,31 @@ function addInLS(nameP1V, numberP1V, nameP2V, numberP2V) {
   // push them in the array
   // for local storage
   if (numberP1V !== numberP2V) {
-    gamesLS.push({ player1: nameP1V, player1num: numberP1V, player2: nameP2V, player2num: numberP2V});
+    gamesLS.push({
+      player1: nameP1V,
+      player1num: numberP1V,
+      player2: nameP2V,
+      player2num: numberP2V
+    });
   }
 
   // we need to build them for the first time
   // then we have sth to loop over
   if (playersLS.length === 0) {
-    playersLS.push({ name: nameP1V, number: numberP1V, win: 0, lose: 0 });
+    playersLS.push({
+      name: nameP1V,
+      number: numberP1V,
+      win: 0,
+      lose: 0
+    });
     // player 1 & 2 numbers shouldnt be equal for the first time
     if (numberP1V !== numberP2V) {
-      playersLS.push({ name: nameP2V, number: numberP2V, win: 0, lose: 0 });
+      playersLS.push({
+        name: nameP2V,
+        number: numberP2V,
+        win: 0,
+        lose: 0
+      });
     }
   }
   // only push the new user
@@ -76,9 +91,19 @@ function addInLS(nameP1V, numberP1V, nameP2V, numberP2V) {
 
   // if isInArray = false then push them in the array
   if (!isInArray) {
-    playersLS.push({ name: nameP1V, number: numberP1V, win: 0, lose: 0 });
+    playersLS.push({
+      name: nameP1V,
+      number: numberP1V,
+      win: 0,
+      lose: 0
+    });
 
-    playersLS.push({ name: nameP2V, number: numberP2V, win: 0, lose: 0 });
+    playersLS.push({
+      name: nameP2V,
+      number: numberP2V,
+      win: 0,
+      lose: 0
+    });
   }
 
   toLS(gamesLS, playersLS);
@@ -130,7 +155,7 @@ button.addEventListener("click", (e) => {
     input4.parentElement.style = "border : 1px solid #00dfc4";
   }
   if (input1Value && input2Value && input3Value && input4Value != "") {
-    location.href = "../index.html";
+    location.href = "../gameeplay/index.html";
   }
   if (input1Value && input2Value && input3Value && input4Value == "")
     alert("please fill the field");
