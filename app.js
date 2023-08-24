@@ -196,7 +196,7 @@ function damage(x,y) {
 
 // Sara........................................................
 
-// ٢.گرفتن اسم کاربران از متغیر و قراردادن اسمشون در سایدی که انتخاب شده
+// ٢.گرفتن اسم کاربران و قراردادن اسمشون در سایدی که انتخاب شده
 
 // ٣.با تموم شدن جون یا تایم اسم برنده یا بازنده مشخص شه
 
@@ -210,28 +210,34 @@ function getNames() {
   const gamesPlayersLS = fromLS();
   const gamesLS = gamesPlayersLS[0];
 
-  // get player1 & player2 names from the array
-  const player1 = gamesLS[0].player1;
-  const player2 = gamesLS[0].player2;
+  // get player1 & player2 names from the last object in the array
 
-  return [player1, player2];
+  const currentPlayer1 = gamesLS[gamesLS.length - 1].player1;
+  const currentPlayer2 = gamesLS[gamesLS.length - 1].player2;
+
+console.log(currentPlayer1);
+console.log(currentPlayer2);
+
+  return [currentPlayer1, currentPlayer2];
 }
+// ......................................................
 
 function addNames() {
-  const players = getNames();
-  const player1 = players[0];
-  const player2 = players[1];
+  const currentPlayers = getNames();
+  const currentPlayer1 = currentPlayers[0];
+  const currentPlayer2 = currentPlayers[1];
 
   // add them in the html
 
   const firstPlayer = document.querySelector("#player1");
   const secondPlayer = document.querySelector("#player2");
 
-  firstPlayer.innerHTML = player1;
-  secondPlayer.innerHTML = player2;
+  firstPlayer.innerHTML = currentPlayer1;
+  secondPlayer.innerHTML = currentPlayer2;
 }
 
 addNames();
+// ......................................................
 
 // player1 loser > heart = 0
 function loserP1() {
@@ -265,7 +271,8 @@ function loserP2() {
   loser.innerHTML = player2;
 }
 
-
+// ......................................................
+// ********************************************
 // let win = 0;
 // let lose = 0;
 

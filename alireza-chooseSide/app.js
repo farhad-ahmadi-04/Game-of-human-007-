@@ -51,7 +51,10 @@ function addInLS(nameP1V, numberP1V, nameP2V, numberP2V) {
 
   // push them in the array
   // for local storage
-  gamesLS.push({ player1: nameP1V, player2: nameP2V });
+  if (numberP1V !== numberP2V) {
+    gamesLS.push({ player1: nameP1V, player1num: numberP1V, player2: nameP2V, player2num: numberP2V});
+  }
+
 
   // for variable**********************************
   // gamesGlobal.push({ player1: nameP1V, player2: nameP2V });
