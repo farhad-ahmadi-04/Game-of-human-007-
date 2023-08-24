@@ -6,7 +6,16 @@ let hummyImage = document.querySelector(".hummyImage");
 // let img1 = document.querySelector(".img1")
 // let img2 = document.querySelector(".img2")
 let bombImg = document.querySelector(".bombImg");
+// responsive
+const up = document.querySelector(".up");
+const left = document.querySelector(".right-left");
+const right = document.querySelector(".right");
+const down = document.querySelector(".down");
 
+up.addEventListener("click", move)
+left.addEventListener("click", move)
+right.addEventListener("click", move)
+down.addEventListener("click", move)
 // ......................................................
 let input = document.getElementById("gameSpeed");
 let heart = document.querySelector("#heart");
@@ -16,7 +25,39 @@ let y = 0;
 let step = 70;
 let windowWidth = window.innerWidth;
 let windowHeight = window.innerHeight;
-
+// for responsive mode
+function move() {
+  if (left.click) {
+    // برای حرکت به سمت چپ
+    // move left
+    if (x > 0) {
+      x -= step;
+      hummy.style.left = x + "px";
+    }
+  } else if (up.click) {
+    //  برای حرکت بع سمت بالا
+    // move up
+    if (y > 0) {
+      y -= step;
+      hummy.style.top = y + "px";
+    }
+  } else if (right.click) {
+    console.log('Updating');
+    // برای حرکت به سمت راست
+    if (x + 100 < container.clientWidth - 100) {
+      x += step;
+      hummy.style.left = x + "px";
+    }
+  } else if (down.click) {
+    // برای حرکت به سمت پایین
+    // move down
+    if (y + 100 < container.clientHeight - 100) {
+      y += step;
+      hummy.style.top = y + "px";
+    }
+  }
+}
+// for responsive mode--------
 body.addEventListener("keydown", function (e) {
   if (e.keyCode == 37 || e.keyCode == 65) {
     // برای حرکت به سمت چپ
@@ -76,10 +117,10 @@ function demage() {
   if (heart.innerHTML == 0) {
     // call end game function
     endGame();
-   // showing loser name
-   loserP1();
-   // add a point to player1 lose & player2 win
-   player2win();
+    // showing loser name
+    loserP1();
+    // add a point to player1 lose & player2 win
+    player2win();
   }
 }
 
@@ -101,10 +142,10 @@ function timer() {
     if (sec == 0 && min == 0) {
       // call end game function
       endGame();
-    // showing loser name
-    loserP2();
-    // add a point to player1 win & player2 lose
-    player1win();
+      // showing loser name
+      loserP2();
+      // add a point to player1 win & player2 lose
+      player1win();
       clearInterval(timerInterval);
     } else {
       if (sec < 0) {
