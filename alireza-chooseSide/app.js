@@ -38,11 +38,6 @@ function fromLS() {
   return [gamesLS, playersLS];
 }
 
-// **********************************************
-// get from local storage for better usage.............
-// const gamesGlobal = [];
-// **********************************************
-
 function addInLS(nameP1V, numberP1V, nameP2V, numberP2V) {
   // take that array out of local storage or build one if there is not any
   let gamesPlayersLS = fromLS();
@@ -54,12 +49,6 @@ function addInLS(nameP1V, numberP1V, nameP2V, numberP2V) {
   if (numberP1V !== numberP2V) {
     gamesLS.push({ player1: nameP1V, player1num: numberP1V, player2: nameP2V, player2num: numberP2V});
   }
-
-
-  // for variable**********************************
-  // gamesGlobal.push({ player1: nameP1V, player2: nameP2V });
-  // console.log(gamesGlobal);
-  // **********************************************
 
   // we need to build them for the first time
   // then we have sth to loop over

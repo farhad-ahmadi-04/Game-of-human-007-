@@ -1,9 +1,4 @@
-// الگوریتم :
-// ١.گرفتن اسم و شماره تماس هردو کاربر و ذخیره انها در دو ارایه گیم و پلیر در لوکال استورج.
-
-// ٢.گرفتن اسم کاربران از ارایه گیم و قراردادن اسمشون در سایدی که انتخاب شده
-
-// ٣.با تموم شدن جون یا تایم تعداد وین و لوز مشخص بشه و به ارایه پلیر اضاف شه .
+// اطلاعات از لوکال استورج گرفته شه و توی تمپلت قرار بگیره
 
 // ۴.اونی ک برنده شد یا بازنده باید ی کلس بهشون اضاف شه ک رنگ سبز یا قرمز بگیرن.
 
@@ -13,9 +8,43 @@
 
 // ٧.هر کاربری ک وارد میشه باید چک شه ک قبلا توی ارایه پلیر ذخیره شده یا نه ک تغییرات به خودش اضافه شه و دوباره ثبت نشه.
 
+
 // template for player & history section
 
-function platerTemplate(nameP, win, lose, score) {
+function addToPlayers() {
+  // get from local storage
+  const gamesPlayersLS = fromLS();
+  // get the games array
+  const gamesLS = gamesPlayersLS[0];
+  // get the players array
+  const playersLS = gamesPlayersLS[1];
+
+  // for each player a template is needed
+  playersLS.forEach((player) => {
+    // variables for object keys in players array
+    const nameP = player.name;
+    const win = player.win;
+    const lose = player.lose;
+    // the final score 
+    let score = player.win - player.lose;
+    if (score < 0 ) {
+      score = 0;
+    }
+
+    playerTemplate(nameP, win, lose, score);
+  });
+
+  gamesLS.forEach((game) => {
+    // variables for object keys in players array
+    const nameP1 = game.player1;
+    const nameP2 = game.player2;
+    const date = "date";
+
+    historyTemplate(nameP1, nameP2, date);
+  });
+}
+
+function playerTemplate(nameP, win, lose, score) {
   return `<div>
     <span class="player">${nameP}</span>
     <span>Win: ${win}</span> <span>Lose: ${lose}</span>
@@ -33,3 +62,11 @@ function historyTemplate(nameP1, nameP2, date) {
      <span class="date">${date}</span>
  </div>`;
 }
+
+
+
+document.querySelector("#playersSec").insertAdjacentHTML(
+  "afterbegin", addToPlayers());
+
+
+  
