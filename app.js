@@ -332,4 +332,9 @@ function player2win() {
   if (foundP2) {
     foundP2.win += 1;
   }
+  
+  // store points in local storage
+  toLS(gamesLS, playersLS);
+
 }
+
