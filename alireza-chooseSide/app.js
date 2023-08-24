@@ -17,6 +17,8 @@ button.addEventListener("click", (e) => {
   addInLS(nameP1V, numberP1V, nameP2V, numberP2V);
 });
 
+// ....................................................
+
 function fromLS() {
   // later on registrations
   let gamesLS = JSON.parse(localStorage.getItem("games"));
@@ -36,6 +38,11 @@ function fromLS() {
   return [gamesLS, playersLS];
 }
 
+// **********************************************
+// get from local storage for better usage.............
+// const gamesGlobal = [];
+// **********************************************
+
 function addInLS(nameP1V, numberP1V, nameP2V, numberP2V) {
   // take that array out of local storage or build one if there is not any
   let gamesPlayersLS = fromLS();
@@ -43,8 +50,13 @@ function addInLS(nameP1V, numberP1V, nameP2V, numberP2V) {
   let playersLS = gamesPlayersLS[1];
 
   // push them in the array
-
+  // for local storage
   gamesLS.push({ player1: nameP1V, player2: nameP2V });
+
+  // for variable**********************************
+  // gamesGlobal.push({ player1: nameP1V, player2: nameP2V });
+  // console.log(gamesGlobal);
+  // **********************************************
 
   // we need to build them for the first time
   // then we have sth to loop over
@@ -79,6 +91,8 @@ function addInLS(nameP1V, numberP1V, nameP2V, numberP2V) {
 
   toLS(gamesLS, playersLS);
 }
+
+// ....................................................
 
 function toLS(gamesLS, playersLS) {
   //   then put the array back in local storage

@@ -7,6 +7,24 @@ let hummyImage = document.querySelector(".hummyImage");
 // let img2 = document.querySelector(".img2")
 let bombImg = document.querySelector(".bombImg");
 
+
+  // **********************************************
+// اطلاعات با هر رفرش میپره نمیشه توی متغیر ریخت یاحالا هنوز نمیدونم چطوری
+// varibles for players names ...........................
+// const firstPlayer = document.querySelector("#player1");
+// const secondPlayer = document.querySelector("#player2");
+
+// const winner = document.querySelector("#winner");
+// const loser = document.querySelector("#loser");
+// ......................................................
+// get names from variable & add them in html
+// firstPlayer.innerHTML = gamesGlobal[0].player1;
+// secondPlayer.innerHTML = gamesGlobal[0].player2
+// **********************************************
+
+
+
+// ......................................................
 let input = document.getElementById("gameSpeed");
 let heart = document.querySelector("#heart");
 let x = 0;
@@ -178,7 +196,7 @@ function damage(x,y) {
 
 // Sara........................................................
 
-// ٢.گرفتن اسم کاربران از ارایه گیم و قراردادن اسمشون در سایدی که انتخاب شده
+// ٢.گرفتن اسم کاربران از متغیر و قراردادن اسمشون در سایدی که انتخاب شده
 
 // ٣.با تموم شدن جون یا تایم اسم برنده یا بازنده مشخص شه
 
