@@ -162,37 +162,40 @@ function playAgainTheGame(event) {
 }
 // ---------------bomb part-----------------
 
-// اگر روی صفحه بازی کلیک کنید انفجاری رخ میده
-// if click on the page
-container.addEventListener("click", (e) => {
-  // if (e.target.classList.contains('hummyImage')) {
-  //     heart.value -= 1
-  // }
-  //    مشخص کردن مختصات
-  let width = e.x;
-  let height = e.y;
-  bombImg.getBoundingClientRect();
- const x = bombImg.x;
- const y = bombImg.y;
- console.log(x,y);
-  bombImg.style.top = height - 180 + "px";
-  bombImg.style.left = width - 180 + "px";
-  bombImg.style.display = "block";
 
-  const bomb = setTimeout(() => {
-    bombImg.style.display = "none";
-  }, 1000);
-  damage(width, height);
-});
-function damage(x,y) {
-    setTimeout(() => {
-      if (x==hummy.clientHeight && y==hummy.clientWidth) {
-        console.log(x);
-        heart.innerHTML-=1
-    }
-    },1000)
+//  fail in this part:)))))))
+
+// // اگر روی صفحه بازی کلیک کنید انفجاری رخ میده
+// // if click on the page
+// container.addEventListener("click", (e) => {
+//   // if (e.target.classList.contains('hummyImage')) {
+//   //     heart.value -= 1
+//   // }
+//   //    مشخص کردن مختصات
+//   let width = e.x;
+//   let height = e.y;
+//   bombImg.getBoundingClientRect();
+//  const x = bombImg.x;
+//  const y = bombImg.y;
+//  console.log(x,y);
+//   bombImg.style.top = height - 180 + "px";
+//   bombImg.style.left = width - 180 + "px";
+//   bombImg.style.display = "block";
+
+//   const bomb = setTimeout(() => {
+//     bombImg.style.display = "none";
+//   }, 1000);
+//   damage(width, height);
+// });
+// function damage(x,y) {
+//     setTimeout(() => {
+//       if (x==hummy.clientHeight && y==hummy.clientWidth) {
+//         console.log(x);
+//         heart.innerHTML-=1
+//     }
+//     },1000)
    
-}
+// }
 
 // Sara........................................................
 
