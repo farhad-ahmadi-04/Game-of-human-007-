@@ -17,7 +17,7 @@ body{
 #container{
     background: #1d2d3a;
     border: 1px solid rgba(255, 255, 255, 0.25);
-    width: 68%;
+    width: 82%;
     height: 68vh;
     display: flex;
     justify-content: center;
@@ -38,7 +38,7 @@ body{
 
 .inputBox{
     position: relative;
-    width: 250px;
+    width: 99%;
     margin-bottom: 50px;
   
 }
@@ -191,4 +191,9 @@ button {
    input::-webkit-inner-spin-button {
     -webkit-appearance: none;
   }
-   
+ @media  screen ( max-width:900px){
+    .container{
+        width: 89%;
+        height: 70vh;
+    }
+ }  
