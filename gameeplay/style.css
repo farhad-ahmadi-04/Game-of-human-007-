@@ -206,7 +206,22 @@ button:before {
 button:hover:before {
     width: 100%;
 }
-
+.controler{
+    display: none;
+}
+.up{
+    width: 20px;
+    height: 20px;
+}
+.right-left{
+    display: inline-flex;
+    width: 20px;
+    height: 20px;
+}
+.down{
+    width: 20px;
+    height: 20px;
+}
 /* batman btn style end */
 
 /* ---------responsive style start------- */
@@ -232,4 +247,43 @@ button:hover:before {
         width: 90%;
     }
     /* end------00000------ */
+    .container{
+        flex-direction: row;
+        width: 95%;
+        
+    }
+    #header{
+        width: 24%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        border-right: 0.5px solid rgb(128, 128, 128);
+    }
+    .controler{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    .up{
+        margin-bottom: 40px;
+        margin-left: 45px;
+        width: 0px;
+        
+    }
+    .left{
+        margin-right:40px ;
+        width: 10px;
+        
+    }
+    .right{
+        width: 10px;
+        margin-left: 40px;
+    }
+    .down{
+        margin-top: 40px;
+        margin-left: 45px;
+        width: 10px;
+        
+    }
   }
