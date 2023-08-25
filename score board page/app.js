@@ -29,15 +29,17 @@ function addToPlayers() {
     if (score < 0) {
       score = 0;
     }
-// only show the players with win or lose
-    if (!(win === 0 & lose === 0) ) {
-      document
-      .querySelector("#playersSec")
-      .insertAdjacentHTML(
-        "beforeend",
-        playerTemplate(nameP, win, lose, score)
-      );
-    }
+
+  // only show the players with win or lose
+  if (!(win === 0 & lose === 0) ) {
+    document
+    .querySelector("#playersSec")
+    .insertAdjacentHTML(
+      "beforeend",
+      playerTemplate(nameP, win, lose, score)
+    );
+  } 
+
 
   });
 
@@ -45,7 +47,7 @@ function addToPlayers() {
     // variables for object keys in players array
     const nameP1 = game.player1;
     const nameP2 = game.player2;
-    const date = "date";
+    const date = game.gameDate;
 
     document
     .querySelector("#historySec")

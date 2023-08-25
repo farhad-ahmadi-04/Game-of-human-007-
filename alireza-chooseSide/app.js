@@ -13,8 +13,16 @@ button.addEventListener("click", (e) => {
   let nameP2V = document.querySelector("#nameP2V").value;
   let numberP2V = document.querySelector("#numberP2V").value;
 
+  // get the date of log in ...................
+ let longDate = new Date();
+ let year = longDate.getFullYear();
+//  months start from index 0
+ let month = longDate.getMonth() + 1;
+ let day = longDate.getDate();
+ let date = year + "." + month + "." + day;
+
   // push them in the array
-  addInLS(nameP1V, numberP1V, nameP2V, numberP2V);
+  addInLS(nameP1V, numberP1V, nameP2V, numberP2V, date);
 });
 
 // ....................................................
@@ -38,7 +46,7 @@ function fromLS() {
   return [gamesLS, playersLS];
 }
 
-function addInLS(nameP1V, numberP1V, nameP2V, numberP2V) {
+function addInLS(nameP1V, numberP1V, nameP2V, numberP2V, date) {
   // take that array out of local storage or build one if there is not any
   let gamesPlayersLS = fromLS();
   let gamesLS = gamesPlayersLS[0];
@@ -51,7 +59,8 @@ function addInLS(nameP1V, numberP1V, nameP2V, numberP2V) {
       player1: nameP1V,
       player1num: numberP1V,
       player2: nameP2V,
-      player2num: numberP2V
+      player2num: numberP2V,
+      gameDate: date
     });
   }
 
