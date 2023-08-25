@@ -30,11 +30,13 @@ section > div {
 
 .player {
   font-weight: bold;
+  color: rgb(227, 203, 65);
 }
 
 .score {
     font-weight: bold;
-}
+    color: rgb(227, 203, 65);
+  }
 
 hr {
 opacity: .5;

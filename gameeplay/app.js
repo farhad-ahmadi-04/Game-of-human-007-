@@ -306,8 +306,10 @@ function player1win() {
   // get the players array
   const playersLS = gamesPlayersLS[1];
 
-  const currentPlayer1Num = gamesLS[gamesLS.length - 1].player1num;
-  const currentPlayer2Num = gamesLS[gamesLS.length - 1].player2num;
+  const currentGame = gamesLS[gamesLS.length - 1];
+
+  const currentPlayer1Num = currentGame.player1num;
+  const currentPlayer2Num = currentGame.player2num;
 
   // find the match in both arrays
 
@@ -319,6 +321,8 @@ function player1win() {
 
   if (foundP1) {
     foundP1.win += 1;
+    currentGame.winner = currentGame.player2;
+
   }
 
   const foundP2 = playersLS.find((player2) => {
@@ -339,8 +343,10 @@ function player2win() {
   // get the players array
   const playersLS = gamesPlayersLS[1];
 
-  const currentPlayer1Num = gamesLS[gamesLS.length - 1].player1num;
-  const currentPlayer2Num = gamesLS[gamesLS.length - 1].player2num;
+const currentGame = gamesLS[gamesLS.length - 1];
+
+  const currentPlayer1Num = currentGame.player1num;
+  const currentPlayer2Num = currentGame.player2num;
 
   // find the match in both arrays
 
@@ -362,9 +368,14 @@ function player2win() {
 
   if (foundP2) {
     foundP2.win += 1;
+    currentGame.winner = currentGame.player2;
+    console.log(currentGame.winner);
+    console.log(currentGame.player2);
   }
 
   // store points in local storage
   toLS(gamesLS, playersLS);
 
 }
+
+console.log('hoooo');

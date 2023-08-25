@@ -60,7 +60,8 @@ function addInLS(nameP1V, numberP1V, nameP2V, numberP2V, date) {
       player1num: numberP1V,
       player2: nameP2V,
       player2num: numberP2V,
-      gameDate: date
+      gameDate: date,
+      winner : "undefinedd",
     });
   }
 

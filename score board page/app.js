@@ -39,8 +39,6 @@ function addToPlayers() {
       playerTemplate(nameP, win, lose, score)
     );
   } 
-
-
   });
 
   gamesLS.forEach((game) => {
@@ -56,6 +54,23 @@ function addToPlayers() {
       historyTemplate(nameP1, nameP2, date)
     );
 
+    // winner = green , loser = red************* 
+    document.querySelectorAll("#player1").forEach(player1 => {
+      if (game.winner === game.player1 ) {
+        player1.classList.add("winner");
+      }else {
+        player1.classList.add("loser");
+      } 
+    });
+
+    document.querySelectorAll("#player2").forEach(player2 => {
+      if (game.winner === game.player2 ) {
+        player2.classList.add("winner");
+      }else {
+        player2.classList.add("loser");
+      } 
+    });
+
   });
 }
 
@@ -70,9 +85,9 @@ function playerTemplate(nameP, win, lose, score) {
 function historyTemplate(nameP1, nameP2, date) {
   return `<div>
     <p>
-    <span class="winner">${nameP1}</span>
+    <span id="player1">${nameP1}</span>
      <span>vs</span>
-     <span class="loser">${nameP2}</span>
+     <span id="player2">${nameP2}</span>
      </p>
      <span class="date">${date}</span>
  </div>`;

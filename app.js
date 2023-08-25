@@ -7,7 +7,6 @@ let hummyImage = document.querySelector(".hummyImage");
 // let img2 = document.querySelector(".img2")
 let bombImg = document.querySelector(".bombImg");
 
-
 let input = document.getElementById("gameSpeed");
 let heart = document.querySelector("#heart");
 let x = 0;
@@ -122,13 +121,13 @@ function timer() {
 timer();
 // end game
 const report = document.querySelector("#report");
-const homeBtn = document.querySelector('.homeBtn')
+const homeBtn = document.querySelector(".homeBtn");
 // end game function
 function endGame(e) {
   report.style.display = "flex";
 }
 
-// ---------------click to report page-------------- 
+// ---------------click to report page--------------
 // for back to home
 homeBtn.addEventListener("click", homePage);
 // function for back to home
@@ -138,7 +137,7 @@ function homePage(event) {
   }
 }
 
-const playAgainBtn = document.querySelector('.playAgainBtn')
+const playAgainBtn = document.querySelector(".playAgainBtn");
 // for back to home
 playAgainBtn.addEventListener("click", playAgainTheGame);
 // function for back to home
@@ -157,7 +156,7 @@ container.addEventListener("click", (e) => {
   // }
   //    مشخص کردن مختصات
   let width = e.x;
-  let height = e.y; 
+  let height = e.y;
   bombImg.style.top = height - 180 + "px";
   bombImg.style.left = width - 180 + "px";
   bombImg.style.display = "block";
@@ -171,10 +170,9 @@ function damage(x, y) {
   setTimeout(() => {
     if (x == hummy.clientHeight && y == hummy.clientWidth) {
       console.log(x);
-      heart.innerHTML -= 1
+      heart.innerHTML -= 1;
     }
-  }, 1000)
-
+  }, 1000);
 }
 
 // Sara........................................................
@@ -230,7 +228,6 @@ function loserP1() {
 
   winner.innerHTML = player2;
   loser.innerHTML = player1;
-
 }
 
 // player2 loser > time = 0
@@ -258,6 +255,9 @@ function player1win() {
   // get the players array
   const playersLS = gamesPlayersLS[1];
 
+  // the newest object in the array
+  const currentGame = gamesLS[gamesLS.length - 1];
+
   const currentPlayer1Num = gamesLS[gamesLS.length - 1].player1num;
   const currentPlayer2Num = gamesLS[gamesLS.length - 1].player2num;
 
@@ -271,6 +271,8 @@ function player1win() {
 
   if (foundP1) {
     foundP1.win += 1;
+    // who is the winner
+    currentGame.winner = currentGame.player1;
   }
 
   const foundP2 = playersLS.find((player2) => {
@@ -291,10 +293,17 @@ function player2win() {
   // get the players array
   const playersLS = gamesPlayersLS[1];
 
+  // the newest object in the array
+  const currentGame = gamesLS[gamesLS.length - 1];
+
+  // find the newest match > players numbers
   const currentPlayer1Num = gamesLS[gamesLS.length - 1].player1num;
   const currentPlayer2Num = gamesLS[gamesLS.length - 1].player2num;
 
   // find the match in both arrays
+
+  console.log(currentGame.player2);
+  console.log(currentGame.winner);
 
   const foundP1 = playersLS.find((player1) => {
     if (player1.number === currentPlayer1Num) {
@@ -314,11 +323,16 @@ function player2win() {
 
   if (foundP2) {
     foundP2.win += 1;
+    // who is the winner
+    currentGame.winner = currentGame.player2;
+
   }
-  
+
+
+
   // store points in local storage
   toLS(gamesLS, playersLS);
-
 }
 
 
+console.log("ho");
