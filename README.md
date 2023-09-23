@@ -13,4 +13,6 @@
   - Email-address : **farhad.13ahmadi.83@gmail.com**
 - Majid Ghashghaei Sheshboluki
   - Email-address : ****
-    
+## responsive
+> - this game is responsive too, but need leter work:)
+> - we are working on mobile form, if you want join us for make it:) 
