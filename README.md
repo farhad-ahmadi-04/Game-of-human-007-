@@ -7,7 +7,7 @@
 - [PLAY NOW](https://feri-punisher.github.io/Game-of-human-007-/)
 ## Contributors 
 - Sara Vafaei
-  - Email-address : ****
+  - Email-address : **Sara.vafaei2@gmail.com**
 - Alireza Ahmadi
   - Email-address : ****
 - Farhad Ahamdi
