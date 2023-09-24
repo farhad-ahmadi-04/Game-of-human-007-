@@ -5,7 +5,7 @@
 > - This game saves the results of each match and you can see the results on the board.
 > - We hope you enjoy the game.
 - [PLAY NOW](https://feri-punisher.github.io/Game-of-human-007-/)
-## conterduters
+## Contributors 
 - Sara Vafaei
   - Email-address : ****
 - Alireza Ahmadi
